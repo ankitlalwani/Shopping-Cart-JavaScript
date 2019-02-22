@@ -121,12 +121,16 @@ function deleteCartItem(){
 //    console.log(cart.children);
     
 //    cartItemRemove.addEventListener('click',function(event){
-
-
-        console.log("Hello");
+        
+        if(event.target.parentElement.parentElement.classList.contains('cart-item')){
+        
+     //   console.log("Hello");
 
         const cartParent = event.target.parentElement.parentElement.parentElement;
         const finalRem   = event.target.parentElement.parentElement;
+       
+       // console.log(finalRem);
+        
 
         cartParent.removeChild(finalRem);
 
@@ -136,6 +140,7 @@ function deleteCartItem(){
 //        console.log("You have deleted the cart item");
 
   //         cart.removeChild(cartItemRemove);
+            };
 
         })
     })
