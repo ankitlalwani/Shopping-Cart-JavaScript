@@ -7,6 +7,7 @@
 
     cartInfo.addEventListener('click', function(){
         cart.classList.toggle('show-cart');
+        deleteCartItem();
     })
 })();
 
@@ -43,7 +44,7 @@ cartBtn.forEach(function(btn){
             item.price = finalPrice;
           
       //      console.log(finalPrice);
-           console.log(item); 
+         //  console.log(item); 
 
            const cartItem = document.createElement('div');
            cartItem.classList.add('cart-item','d-flex','justify-content-between', 'text-capitalize', 'my-3')
@@ -76,6 +77,7 @@ cartBtn.forEach(function(btn){
 
     })
 })
+})();
 
 //show Totals
 function showTotals(){
@@ -94,11 +96,51 @@ const totalAmount = total.reduce(function(total, item){
 },0)
 const finalAmount = totalAmount.toFixed(2);
 
-console.log(finalAmount);
+//console.log(finalAmount);
 
 document.getElementById('cart-total').textContent = finalAmount;
 document.querySelector('.item-total').textContent = finalAmount;
 document.getElementById('item-count').textContent = total.length; 
 }
 
-})();
+
+
+function deleteCartItem(){
+
+    const cartItemRem = document.querySelectorAll('.cart-item-remove');
+
+//    console.log(cartItemRem);
+
+    cartItemRem.forEach(function(btn){
+        btn.addEventListener('click', function(event){
+//    const cartItemRemove = document.getElementById('cart-item-remove');
+//    const cart = document.getElementById('cart');
+
+//    console.log(cartItemRemove);
+ //   console.log(cart);
+//    console.log(cart.children);
+    
+//    cartItemRemove.addEventListener('click',function(event){
+
+
+        console.log("Hello");
+
+        const cartParent = event.target.parentElement.parentElement.parentElement;
+        const finalRem   = event.target.parentElement.parentElement;
+
+        cartParent.removeChild(finalRem);
+
+        showTotals();
+
+        
+//        console.log("You have deleted the cart item");
+
+  //         cart.removeChild(cartItemRemove);
+
+        })
+    })
+    
+
+};
+
+

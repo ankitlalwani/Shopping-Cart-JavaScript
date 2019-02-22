@@ -2,11 +2,12 @@
 
 :root {
   --mainPink: #ef7998;
-  --mainYellow: rgb(249, 228, 148);
+  --mainYellow: rgb(247, 230, 162);
   --mainWhite: #fff;
   --mainBlack: #000;
   --yellowTrans: rgba(249, 228, 148, 0.5);
   --mainGrey: rgb(238, 238, 238);
+  --mainPurple: #b679ef;
 }
 
 body {
@@ -62,7 +63,7 @@ body {
   position: relative;
 }
 .banner {
-  color: var(--mainWhite);
+  color: var(--mainPurple);
   margin-top: -4rem;
 }
 .banner-title {
